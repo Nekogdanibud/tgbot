@@ -96,7 +96,8 @@ async def show_user_details(callback: CallbackQuery):
                 USER_STATUS_ICONS.get(user.get('status'), '⚪'),
                 format_size(user.get('data_limit')),
                 format_size(user.get('used_traffic')),
-                user.get('expire_date', '∞')
+                user.get('expire_date', '∞'),
+		user.get('sub_last_user_agent', 'Не удалось определить')
             ),
             reply_markup=user_actions_kb(username),
 	    parse_mode="HTML"
